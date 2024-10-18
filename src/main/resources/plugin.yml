@@ -1,0 +1,15 @@
+name: CAHItems
+version: '1.0-SNAPSHOT'
+main: xyz.tronax.CAHItems.Main
+api-version: '1.21'
+load: STARTUP
+authors: [ Tronax_ ]
+description: Chest and Hotbar Items!
+website: https://tronax.xyz
+
+commands:
+  cahitems:
+    description: Main command for CAHItems plugin
+    usage: /cahitems <reload>
+    permission: cahitems.reload
+    permission-message: You do not have permission to use this command.
