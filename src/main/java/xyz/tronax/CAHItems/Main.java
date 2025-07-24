@@ -24,6 +24,8 @@ import java.util.Map;
 
 public final class Main extends JavaPlugin implements Listener {
 
+    public static String prefix = "§cCAH §eItems §8| ";
+
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
         // Prevent moving items in the hotbar
@@ -53,11 +55,18 @@ public final class Main extends JavaPlugin implements Listener {
         loadConfig();
         getServer().getPluginManager().registerEvents(this, this);
         getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
+
+        print(prefix + " §aPlugin successfully enabled!");
+    }
+
+    public void print(String msg) {
+        Bukkit.getConsoleSender().sendMessage(msg);
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+        print(prefix + " §cPlugin successfully disabled!");
     }
 
     private void loadConfig() {
